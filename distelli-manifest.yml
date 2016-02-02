@@ -1,0 +1,26 @@
+bahmutov/test-koa:
+
+PkgInclude:
+  - '*'
+
+PkgExclude:
+  - node_modules/
+
+PreRelease:
+  - npm install
+
+PreInstall:
+  - sudo apt-get -y update
+  - sudo apt-get -y install build-essential libssl-dev curl
+  - echo "-Installing nvm-"
+  - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.0/install.sh | bash
+  - set +e; source ~/.nvm/nvm.sh; set -e
+  - echo "-Installing nodejs-"
+  # choose your node version below
+  - nvm install 5
+
+PostInstall:
+  - npm install
+
+Exec:
+  - /usr/bin/nodejs index.js
