@@ -24,4 +24,5 @@ PostInstall:
   - npm install
 
 Exec:
+  - echo "starting server"
   - /usr/bin/nodejs index.js
