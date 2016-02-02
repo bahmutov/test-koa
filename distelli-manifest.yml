@@ -20,6 +20,7 @@ PreInstall:
   - nvm install 5
 
 PostInstall:
+  - ls
   - npm install
 
 Exec:
